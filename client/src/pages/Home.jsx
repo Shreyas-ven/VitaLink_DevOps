@@ -1,26 +1,30 @@
 import { Link } from "react-router-dom";
 import "../styles/Home.css";
+import Services from "./Services";
+import About from "./About";
 
 const Home = () => {
   return (
     <div className="home-container">
 
-      {/* Navbar */}
+      {/* NAVBAR */}
 
       <nav className="navbar">
+
         <h2 className="logo">VITALINK</h2>
 
         <div className="nav-links">
-          <a href="/">Home</a>
-          <a href="/">Services</a>
-          <a href="/">About</a>
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
         </div>
+
       </nav>
 
 
-      {/* Hero Section */}
+      {/* HERO SECTION */}
 
-      <section className="hero-section">
+      <section id="home" className="hero-section">
 
         <h1>
           ORGAN & BLOOD DONATION
@@ -48,6 +52,7 @@ const Home = () => {
             </button>
           </Link>
 
+
           <Link to="/login">
             <button className="login-btn">
               Hospital Login
@@ -59,34 +64,50 @@ const Home = () => {
       </section>
 
 
-      {/* Features Section */}
+
+      {/* FEATURES */}
 
       <section className="features-section">
 
         <div className="card">
           <h3>Organ Management</h3>
-          <p>Manage organ availability across hospitals.</p>
+          <p>
+            Manage organ availability across hospitals.
+          </p>
         </div>
 
         <div className="card">
           <h3>Blood Management</h3>
-          <p>Track blood requirements instantly.</p>
+          <p>
+            Track blood requirements instantly.
+          </p>
         </div>
 
         <div className="card">
           <h3>Hospital Network</h3>
-          <p>Connect verified hospitals securely.</p>
+          <p>
+            Connect verified hospitals securely.
+          </p>
         </div>
 
         <div className="card">
           <h3>Emergency Requests</h3>
-          <p>Send and receive emergency requests.</p>
+          <p>
+            Send and receive emergency requests.
+          </p>
         </div>
 
       </section>
 
 
-      {/* Why Section */}
+
+      {/* SERVICES COMPONENT */}
+
+      <Services />
+
+
+
+      {/* WHY CHOOSE US */}
 
       <section className="why-section">
 
@@ -105,12 +126,18 @@ const Home = () => {
       </section>
 
 
-      {/* Footer */}
+
+      {/* ABOUT COMPONENT */}
+
+      <About />
+
+
+      {/* FOOTER */}
 
       <footer>
 
         <h3>
-          "One Organ Can Save Eight Lives."
+          One Organ Can Save Eight Lives
         </h3>
 
         <p>

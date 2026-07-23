@@ -131,7 +131,7 @@ onClick={()=>navigate("/incoming-requests")}
                 View emergency and hospital notifications.
             </p>
 
-            <button>
+            <button >
                 Open
             </button>
 

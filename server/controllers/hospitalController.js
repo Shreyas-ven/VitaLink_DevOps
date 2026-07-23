@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const registerHospital = async (req, res) => {
     try {
 
-        const { hospitalName, email, password, phone, address } = req.body;
+        const { hospitalId, hospitalName, email, password, phone, address } = req.body;
 
 
         // Hash the password
@@ -13,6 +13,7 @@ const registerHospital = async (req, res) => {
 
         // Create a new hospital
         const hospital = new Hospital({
+            hospitalId,
             hospitalName,
             email,
             password: hashedPassword,

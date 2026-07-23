@@ -2,8 +2,11 @@ const express = require("express");
 
 const {
 
-    createRequest,
-    getMyRequests,
+createRequest,
+getMyRequests,
+getIncomingRequests,
+acceptRequest,
+rejectRequest
 
 } = require("../controllers/requestController");
 
@@ -23,6 +26,33 @@ getMyRequests
 
 );
 
+router.get(
+
+"/incoming/:hospitalId",
+
+getIncomingRequests
+
+);
+
+
+router.put(
+
+"/accept/:id",
+
+acceptRequest
+
+);
+
+
+router.put(
+
+"/reject/:id",
+
+rejectRequest
+
+);
 
 
 module.exports = router;
+
+
