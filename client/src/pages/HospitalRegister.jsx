@@ -2,6 +2,8 @@ import { useState } from "react";
 import { registerHospital } from "../services/hospitalService";
 import { Link } from "react-router-dom";
 import "../styles/Register.css";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const HospitalRegister = () => {
 
@@ -12,7 +14,7 @@ const HospitalRegister = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const hospitalId = "HOSP" + Date.now();
-  
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
 
@@ -28,19 +30,19 @@ const HospitalRegister = () => {
         !password ||
         !confirmPassword
     ) {
-        alert("Please fill all the fields.");
+        toast.warning("Please fill all the fields.");
         return;
     }
 
     // Check whether passwords match
     if (password !== confirmPassword) {
-        alert("Passwords do not match.");
+        toast.error("Passwords do not match.");
         return;
     }
 
     // Check password length
     if (password.length < 6) {
-        alert("Password should contain at least 6 characters.");
+        toast.warning("Password should contain at least 6 characters.");
         return;
     }
 
@@ -60,14 +62,24 @@ const HospitalRegister = () => {
 
     const response = await registerHospital(hospitalData);
 
-    alert(response.data.message);
+    toast.success(
+  `Hospital Registered Successfully!
+
+Hospital: ${hospitalName}
+
+Redirecting to Login...`
+);
+
+setTimeout(() => {
+  navigate("/login");
+}, 5000);
 
 }
 catch (error) {
 
     console.log(error);
 
-    alert("Registration Failed");
+    toast.error("Registration Failed");
 
 }
 
