@@ -147,7 +147,9 @@ onClick={()=>navigate("/incoming-requests")}
                 Manage blood requirements and availability.
             </p>
 
-            <button>
+            <button   onClick={() =>
+                navigate("/post-blood")
+                }>
                 Open
             </button>
 

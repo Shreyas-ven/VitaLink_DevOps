@@ -36,3 +36,9 @@ app.use(
     requestRoutes
 );
 
+const bloodRoutes = require("./routes/bloodRoutes");
+
+app.use(
+"/api/blood",
+bloodRoutes
+);
