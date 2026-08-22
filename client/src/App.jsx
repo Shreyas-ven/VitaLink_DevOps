@@ -10,7 +10,11 @@ import RequestOrgan from "./pages/RequestOrgan";
 import MyRequests from "./pages/MyRequests";
 import IncomingRequests from "./pages/IncomingRequests";
 import PostBlood from "./pages/PostBlood";
-
+import AvailableBlood from "./pages/AvailableBlood";
+import RequestBlood from "./pages/RequestBlood";
+import MyBloodRequests from "./pages/MyBloodRequests";
+import IncomingBloodRequests from "./pages/IncomingBloodRequests";
+import BloodDashboard from "./pages/BloodDashboard";
 
 function App() {
   return (
@@ -38,6 +42,31 @@ function App() {
         <Route path="/incoming-requests" element={<IncomingRequests />}/>
 
         <Route path="/post-blood" element={<PostBlood />}/>
+
+        <Route
+path="/available-blood"
+element={<AvailableBlood />}
+/>
+
+<Route
+path="/blood-dashboard"
+element={<BloodDashboard />}
+/>
+
+<Route
+path="/request-blood"
+element={<RequestBlood />}
+/>
+
+<Route
+path="/my-blood-requests"
+element={<MyBloodRequests />}
+/>
+
+<Route
+path="/incoming-blood-requests"
+element={<IncomingBloodRequests />}
+/>
       </Routes>
 
     </BrowserRouter>

@@ -42,3 +42,14 @@ app.use(
 "/api/blood",
 bloodRoutes
 );
+
+const bloodRequestRoutes =
+require("./routes/bloodRequestRoutes");
+
+app.use(
+
+"/api/blood-request",
+
+bloodRequestRoutes
+
+);

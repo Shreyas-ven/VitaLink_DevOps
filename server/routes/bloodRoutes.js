@@ -2,32 +2,19 @@ const express = require("express");
 
 const router = express.Router();
 
-
-const{
-
-createBlood,
-getAvailableBlood,
-
-}=require("../controllers/bloodController");
-
-
+const {
+    createBlood,
+    getAvailableBlood,
+} = require("../controllers/bloodController");
 
 router.post(
-
-"/post-blood",
-
-createBlood
-
+    "/post-blood",
+    createBlood
 );
-
 
 router.get(
-
-"/available-blood",
-
-getAvailableBlood
-
+    "/available",
+    getAvailableBlood
 );
-
 
 module.exports = router;

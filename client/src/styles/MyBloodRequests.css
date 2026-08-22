@@ -1,0 +1,487 @@
+/* =====================================
+   PAGE CONTAINER
+===================================== */
+
+.my-requests-container {
+    min-height: 100vh;
+
+    padding: 50px 60px;
+
+    background: linear-gradient(
+        135deg,
+        #f8fbff 0%,
+        #eef5ff 100%
+    );
+}
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+.my-requests-header {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+
+.my-requests-title {
+    margin: 0;
+
+    font-size: 2.7rem;
+
+    font-weight: 700;
+
+    color: #0f172a;
+
+    letter-spacing: -0.5px;
+}
+
+
+.my-requests-subtitle {
+    margin-top: 12px;
+
+    color: #64748b;
+
+    font-size: 1.05rem;
+}
+
+
+/* =====================================
+   REQUEST GRID
+===================================== */
+
+.requests-grid {
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(350px, 1fr));
+
+    gap: 28px;
+}
+
+
+/* =====================================
+   REQUEST CARD
+===================================== */
+
+.request-card {
+    position: relative;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.07);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+    overflow: hidden;
+}
+
+
+/* Top accent */
+
+.request-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        #dc2626,
+        #ef4444
+    );
+}
+
+
+.request-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 35px rgba(15, 23, 42, 0.12);
+}
+
+
+/* =====================================
+   CARD HEADER
+===================================== */
+
+.request-card-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+
+/* =====================================
+   BLOOD GROUP
+===================================== */
+
+.request-blood-group {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    font-size: 1.25rem;
+
+    font-weight: 800;
+
+    border: 5px solid #fff1f2;
+
+    box-shadow:
+        0 4px 12px rgba(220, 38, 38, 0.12);
+}
+
+
+/* =====================================
+   STATUS BADGE
+===================================== */
+
+.request-status {
+    padding: 8px 15px;
+
+    border-radius: 20px;
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+
+    text-transform: capitalize;
+}
+
+
+/* Pending */
+
+.request-status.pending {
+    background: #fef3c7;
+
+    color: #b45309;
+}
+
+
+/* Approved */
+
+.request-status.approved {
+    background: #dcfce7;
+
+    color: #15803d;
+}
+
+
+/* Accepted */
+
+.request-status.accepted {
+    background: #dcfce7;
+
+    color: #15803d;
+}
+
+
+/* Rejected */
+
+.request-status.rejected {
+    background: #fee2e2;
+
+    color: #dc2626;
+}
+
+
+/* Completed */
+
+.request-status.completed {
+    background: #dbeafe;
+
+    color: #1d4ed8;
+}
+
+
+/* Cancelled */
+
+.request-status.cancelled {
+    background: #f1f5f9;
+
+    color: #475569;
+}
+
+
+/* =====================================
+   REQUEST SECTION
+===================================== */
+
+.request-section {
+    padding: 18px 0;
+
+    border-top: 1px solid #e2e8f0;
+}
+
+
+.request-section h3 {
+    margin: 0 0 13px;
+
+    font-size: 0.85rem;
+
+    color: #64748b;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =====================================
+   REQUEST ROW
+===================================== */
+
+.request-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 7px 0;
+}
+
+
+.request-label {
+    color: #64748b;
+
+    font-size: 0.9rem;
+}
+
+
+.request-value {
+    color: #1e293b;
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    text-align: right;
+}
+
+
+.blood-value {
+    color: #dc2626;
+
+    font-weight: 700;
+}
+
+
+/* =====================================
+   HOSPITAL
+===================================== */
+
+.hospital-name {
+    padding: 13px 15px;
+
+    background: #f8fafc;
+
+    border-radius: 10px;
+
+    color: #1e293b;
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    border: 1px solid #e2e8f0;
+}
+
+
+/* =====================================
+   MESSAGE
+===================================== */
+
+.request-message {
+    margin-top: 5px;
+
+    padding: 15px;
+
+    background: #f8fafc;
+
+    border-left: 4px solid #2563eb;
+
+    border-radius: 8px;
+}
+
+
+.message-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #475569;
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
+}
+
+
+.request-message p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 0.9rem;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================
+   EMPTY STATE
+===================================== */
+
+.no-requests {
+    max-width: 500px;
+
+    margin: 80px auto;
+
+    padding: 50px 30px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.06);
+}
+
+
+.no-requests-icon {
+    font-size: 3.5rem;
+
+    margin-bottom: 15px;
+}
+
+
+.no-requests h2 {
+    margin: 0 0 10px;
+
+    color: #1e293b;
+
+    font-size: 1.5rem;
+}
+
+
+.no-requests p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 1rem;
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 768px) {
+
+    .my-requests-container {
+        padding: 35px 20px;
+    }
+
+    .my-requests-title {
+        font-size: 2.1rem;
+    }
+
+    .my-requests-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .requests-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .request-card {
+        padding: 23px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .my-requests-container {
+        padding: 25px 15px;
+    }
+
+    .my-requests-title {
+        font-size: 1.8rem;
+    }
+
+    .request-card-header {
+        margin-bottom: 20px;
+    }
+
+    .request-blood-group {
+        width: 58px;
+        height: 58px;
+
+        font-size: 1.1rem;
+    }
+
+    .request-status {
+        padding: 6px 11px;
+
+        font-size: 0.75rem;
+    }
+
+    .request-row {
+        align-items: flex-start;
+    }
+
+    .request-value {
+        max-width: 55%;
+    }
+}
