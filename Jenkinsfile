@@ -6,55 +6,35 @@ pipeline {
     stages {
 
         stage('Verify Docker') {
+
             steps {
+
+                bat 'where docker'
+
+                bat 'where docker-compose'
+
                 bat 'docker --version'
+
+                bat 'docker-compose --version'
+
                 bat 'docker compose version'
-            }
-        }
 
-        stage('Checkout') {
-            steps {
-                checkout scm
             }
-        }
 
-        stage('Install Client Dependencies') {
-            steps {
-                dir('client') {
-                    bat 'npm install'
-                }
-            }
-        }
-
-        stage('Install Server Dependencies') {
-            steps {
-                dir('server') {
-                    bat 'npm install'
-                }
-            }
-        }
-
-        stage('Build Docker Images') {
-            steps {
-                bat 'docker compose build'
-            }
-        }
-
-        stage('Start Containers') {
-            steps {
-                bat 'docker compose up -d'
-            }
         }
 
     }
 
     post {
+
         success {
-            echo 'VITALINK CI Pipeline Completed Successfully'
+            echo 'Docker verification successful'
         }
 
         failure {
-            echo 'VITALINK CI Pipeline Failed'
+            echo 'Docker verification failed'
         }
+
     }
+
 }
